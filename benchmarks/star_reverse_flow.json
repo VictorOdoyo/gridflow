@@ -1,0 +1,184 @@
+{
+  "network": {
+    "schema_version": 1,
+    "name": "star / reverse_flow",
+    "base_mva": 100,
+    "buses": [
+      {
+        "id": "1",
+        "kind": "Slack",
+        "vm": 1.02,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      },
+      {
+        "id": "2",
+        "kind": "PQ",
+        "vm": 1.0,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      },
+      {
+        "id": "3",
+        "kind": "PQ",
+        "vm": 1.0,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      },
+      {
+        "id": "4",
+        "kind": "PQ",
+        "vm": 1.0,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      },
+      {
+        "id": "5",
+        "kind": "PQ",
+        "vm": 1.0,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      }
+    ],
+    "branches": [
+      {
+        "id": "line-1",
+        "from": "1",
+        "to": "2",
+        "r": 0.004,
+        "x": 0.12,
+        "b": 0,
+        "tap": 1.0,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      },
+      {
+        "id": "line-2",
+        "from": "1",
+        "to": "3",
+        "r": 0.005,
+        "x": 0.13,
+        "b": 0,
+        "tap": 1.0,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      },
+      {
+        "id": "line-3",
+        "from": "1",
+        "to": "4",
+        "r": 0.006,
+        "x": 0.13999999999999999,
+        "b": 0,
+        "tap": 1.0,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      },
+      {
+        "id": "line-4",
+        "from": "1",
+        "to": "5",
+        "r": 0.004,
+        "x": 0.15,
+        "b": 0,
+        "tap": 1.0,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      }
+    ],
+    "loads": [
+      {
+        "id": "load-2",
+        "bus": "2",
+        "p_mw": -6.964274673573691,
+        "q_mvar": -0.6464618961013442
+      },
+      {
+        "id": "load-3",
+        "bus": "3",
+        "p_mw": -12.874858702961895,
+        "q_mvar": -1.179758875630749
+      },
+      {
+        "id": "load-4",
+        "bus": "4",
+        "p_mw": -17.95633552438705,
+        "q_mvar": -1.637229945730329
+      },
+      {
+        "id": "load-5",
+        "bus": "5",
+        "p_mw": -22.344871728112096,
+        "q_mvar": -2.491288838937157
+      }
+    ],
+    "generators": [
+      {
+        "id": "gen-1",
+        "bus": "1",
+        "p_mw": -60.09253914483824,
+        "q_mvar": -4.532339737529649,
+        "qmin": -1000,
+        "qmax": 1000
+      }
+    ]
+  },
+  "expected": {
+    "vm_pu": [
+      1.02,
+      1.021,
+      1.022,
+      1.0229999999999997,
+      1.0240000000000002
+    ],
+    "va_deg": [
+      0.0,
+      0.4583662361046586,
+      0.9167324722093174,
+      1.375098708313976,
+      1.8334649444186344
+    ],
+    "branches": [
+      {
+        "id": "line-1",
+        "p_from_mw": -6.962397577998514,
+        "q_from_mvar": -0.5901490288460184,
+        "p_to_mw": 6.964274673573691,
+        "q_to_mvar": 0.6464618961013442
+      },
+      {
+        "id": "line-2",
+        "p_from_mw": -12.866856961545759,
+        "q_from_mvar": -0.9717135988111691,
+        "p_to_mw": 12.874858702961895,
+        "q_to_mvar": 1.179758875630749
+      },
+      {
+        "id": "line-3",
+        "p_from_mw": -17.93769616471181,
+        "q_from_mvar": -1.2023115533079645,
+        "p_to_mw": 17.95633552438705,
+        "q_to_mvar": 1.637229945730329
+      },
+      {
+        "id": "line-4",
+        "p_from_mw": -22.32558844058216,
+        "q_from_mvar": -1.7681655565644976,
+        "p_to_mw": 22.344871728112096,
+        "q_to_mvar": 2.491288838937157
+      }
+    ],
+    "losses_mw": 0.04780148419649066
+  },
+  "reference_method": "Manufactured solution: prescribe phasors, evaluate independent ideal-transformer series/charging currents, derive nodal injections. No load-flow solver supplies expected values."
+}
