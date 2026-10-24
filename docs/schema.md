@@ -1,0 +1,5 @@
+# Network schema v1
+
+The system base is `base_mva`. Bus voltage bases are line-to-line kV. Branch r/x/b are per unit on that common power base and the winding voltage bases, which must be consistent with the specified ideal tap. `tap` is the from-side complex tap magnitude; `shift_deg` is its angle. A zero `rate_mva` means unspecified. Bus shunts are MW consumed and MVAr capacitive injected at 1 pu. Equipment `status` is boolean. Loads/generators carry MW and MVAr; signed values permit export, storage and absorbing generators. Every controlled bus needs an online generator. IDs are stable strings. Slack vm/angle and PV vm are setpoints; PQ vm is an initial guess.
+
+Multiple generators at a bus are aggregated for reactive-limit enforcement. Results report aggregate required generation per bus; no economic allocation across colocated machines is implied. Limits on slack generation are reported as model limitations, not enforced. The solver does not enforce voltage or thermal constraints; it reports them.
