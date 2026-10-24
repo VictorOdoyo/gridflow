@@ -14,4 +14,4 @@ gridflow = "gridflow.cli:main"
 [tool.setuptools.packages.find]
 include = ["gridflow*"]
 [tool.setuptools.package-data]
-gridflow = ["web/*", "examples/*.json"]
+gridflow = ["web/*", "examples/*.json", "examples/LICENSE-MATPOWER"]
