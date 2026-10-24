@@ -1,0 +1,3 @@
+# Pseudo-arclength continuation
+
+The augmented state is the reduced AC state plus a proportional load parameter lambda. A null vector of `[J, -dS_spec/dlambda]` defines the unit tangent; its orientation follows the previous tangent. A predictor advances along arclength and a Newton corrector enforces the AC equations plus the tangent hyperplane. Failed correctors reduce the step. A tangent-lambda sign change marks a sampled turning point. Voltage/method bounds can stop the trace before a fold. Q limits are deliberately disabled; this is a fixed-bus-type mathematical curve, not a secure transfer limit. The implementation does not pretend repeated ordinary load-flow solves are continuation.
