@@ -1,0 +1,114 @@
+{
+  "network": {
+    "schema_version": 1,
+    "name": "chain / tap_ratio",
+    "base_mva": 100,
+    "buses": [
+      {
+        "id": "1",
+        "kind": "Slack",
+        "vm": 1.02,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      },
+      {
+        "id": "2",
+        "kind": "PQ",
+        "vm": 1.0,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      },
+      {
+        "id": "3",
+        "kind": "PQ",
+        "vm": 1.0,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      }
+    ],
+    "branches": [
+      {
+        "id": "line-1",
+        "from": "1",
+        "to": "2",
+        "r": 0.004,
+        "x": 0.12,
+        "b": 0,
+        "tap": 1.025,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      },
+      {
+        "id": "line-2",
+        "from": "2",
+        "to": "3",
+        "r": 0.005,
+        "x": 0.13,
+        "b": 0,
+        "tap": 1.0,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      }
+    ],
+    "loads": [
+      {
+        "id": "load-2",
+        "bus": "2",
+        "p_mw": 0.8436119207524637,
+        "q_mvar": -3.940939912593525
+      },
+      {
+        "id": "load-3",
+        "bus": "3",
+        "p_mw": 11.497042206164714,
+        "q_mvar": 2.524612595235486
+      }
+    ],
+    "generators": [
+      {
+        "id": "gen-1",
+        "bus": "1",
+        "p_mw": 12.353903133207748,
+        "q_mvar": -1.0470170142269437,
+        "qmin": -1000,
+        "qmax": 1000
+      }
+    ]
+  },
+  "expected": {
+    "vm_pu": [
+      1.02,
+      0.996,
+      0.992
+    ],
+    "va_deg": [
+      0.0,
+      -0.8594366926962348,
+      -1.7188733853924696
+    ],
+    "branches": [
+      {
+        "id": "line-1",
+        "p_from_mw": 12.353903133207748,
+        "q_from_mvar": -1.0470170142269437,
+        "p_to_mw": -12.34769409831367,
+        "q_to_mvar": 1.2332880610492412
+      },
+      {
+        "id": "line-2",
+        "p_from_mw": 11.504082177561207,
+        "q_from_mvar": 2.707651851544284,
+        "p_to_mw": -11.497042206164714,
+        "q_to_mvar": -2.524612595235486
+      }
+    ],
+    "losses_mw": 0.013249006290569909
+  },
+  "reference_method": "Manufactured solution: prescribe phasors, evaluate independent ideal-transformer series/charging currents, derive nodal injections. No load-flow solver supplies expected values."
+}
