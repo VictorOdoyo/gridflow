@@ -1,0 +1,3 @@
+# Local API
+
+GET `/api/examples` lists bundled cases. GET `/api/example?name=...` reads an allowlisted example. POST `/api/study` accepts JSON containing network, action and options and returns the full study result. POST `/api/import` accepts format and text for validated native JSON or literal MATPOWER matrices. Requests are bounded at 2 MB. Error JSON contains an error string. The adapter serves only three explicitly mapped UI assets; it is not a directory server. Browser cross-origin POST requests are rejected. The server binds to 127.0.0.1 and is intended for a trusted local workstation, not internet deployment or multi-user authentication.
