@@ -1,0 +1,250 @@
+{
+  "base_mva": 100.0,
+  "buses": [
+    {
+      "id": "1",
+      "kind": "Slack",
+      "vm": 1.0,
+      "va_deg": 0.0,
+      "base_kv": 345.0,
+      "gs_mw": 0.0,
+      "bs_mvar": 0.0
+    },
+    {
+      "id": "2",
+      "kind": "PV",
+      "vm": 1.0,
+      "va_deg": 0.0,
+      "base_kv": 345.0,
+      "gs_mw": 0.0,
+      "bs_mvar": 0.0
+    },
+    {
+      "id": "3",
+      "kind": "PV",
+      "vm": 1.0,
+      "va_deg": 0.0,
+      "base_kv": 345.0,
+      "gs_mw": 0.0,
+      "bs_mvar": 0.0
+    },
+    {
+      "id": "4",
+      "kind": "PQ",
+      "vm": 1.0,
+      "va_deg": 0.0,
+      "base_kv": 345.0,
+      "gs_mw": 0.0,
+      "bs_mvar": 0.0
+    },
+    {
+      "id": "5",
+      "kind": "PQ",
+      "vm": 1.0,
+      "va_deg": 0.0,
+      "base_kv": 345.0,
+      "gs_mw": 0.0,
+      "bs_mvar": 0.0
+    },
+    {
+      "id": "6",
+      "kind": "PQ",
+      "vm": 1.0,
+      "va_deg": 0.0,
+      "base_kv": 345.0,
+      "gs_mw": 0.0,
+      "bs_mvar": 0.0
+    },
+    {
+      "id": "7",
+      "kind": "PQ",
+      "vm": 1.0,
+      "va_deg": 0.0,
+      "base_kv": 345.0,
+      "gs_mw": 0.0,
+      "bs_mvar": 0.0
+    },
+    {
+      "id": "8",
+      "kind": "PQ",
+      "vm": 1.0,
+      "va_deg": 0.0,
+      "base_kv": 345.0,
+      "gs_mw": 0.0,
+      "bs_mvar": 0.0
+    },
+    {
+      "id": "9",
+      "kind": "PQ",
+      "vm": 1.0,
+      "va_deg": 0.0,
+      "base_kv": 345.0,
+      "gs_mw": 0.0,
+      "bs_mvar": 0.0
+    }
+  ],
+  "loads": [
+    {
+      "id": "load-5",
+      "bus": "5",
+      "p_mw": 90.0,
+      "q_mvar": 30.0,
+      "status": true
+    },
+    {
+      "id": "load-7",
+      "bus": "7",
+      "p_mw": 100.0,
+      "q_mvar": 35.0,
+      "status": true
+    },
+    {
+      "id": "load-9",
+      "bus": "9",
+      "p_mw": 125.0,
+      "q_mvar": 50.0,
+      "status": true
+    }
+  ],
+  "generators": [
+    {
+      "id": "gen-1",
+      "bus": "1",
+      "p_mw": 72.3,
+      "q_mvar": 27.03,
+      "qmax": 300.0,
+      "qmin": -300.0,
+      "status": true
+    },
+    {
+      "id": "gen-2",
+      "bus": "2",
+      "p_mw": 163.0,
+      "q_mvar": 6.54,
+      "qmax": 300.0,
+      "qmin": -300.0,
+      "status": true
+    },
+    {
+      "id": "gen-3",
+      "bus": "3",
+      "p_mw": 85.0,
+      "q_mvar": -10.95,
+      "qmax": 300.0,
+      "qmin": -300.0,
+      "status": true
+    }
+  ],
+  "branches": [
+    {
+      "id": "branch-1",
+      "from": "1",
+      "to": "4",
+      "r": 0.0,
+      "x": 0.0576,
+      "b": 0.0,
+      "rate_mva": 250.0,
+      "tap": 1.0,
+      "shift_deg": 0.0,
+      "status": true
+    },
+    {
+      "id": "branch-2",
+      "from": "4",
+      "to": "5",
+      "r": 0.017,
+      "x": 0.092,
+      "b": 0.158,
+      "rate_mva": 250.0,
+      "tap": 1.0,
+      "shift_deg": 0.0,
+      "status": true
+    },
+    {
+      "id": "branch-3",
+      "from": "5",
+      "to": "6",
+      "r": 0.039,
+      "x": 0.17,
+      "b": 0.358,
+      "rate_mva": 150.0,
+      "tap": 1.0,
+      "shift_deg": 0.0,
+      "status": true
+    },
+    {
+      "id": "branch-4",
+      "from": "3",
+      "to": "6",
+      "r": 0.0,
+      "x": 0.0586,
+      "b": 0.0,
+      "rate_mva": 300.0,
+      "tap": 1.0,
+      "shift_deg": 0.0,
+      "status": true
+    },
+    {
+      "id": "branch-5",
+      "from": "6",
+      "to": "7",
+      "r": 0.0119,
+      "x": 0.1008,
+      "b": 0.209,
+      "rate_mva": 150.0,
+      "tap": 1.0,
+      "shift_deg": 0.0,
+      "status": true
+    },
+    {
+      "id": "branch-6",
+      "from": "7",
+      "to": "8",
+      "r": 0.0085,
+      "x": 0.072,
+      "b": 0.149,
+      "rate_mva": 250.0,
+      "tap": 1.0,
+      "shift_deg": 0.0,
+      "status": true
+    },
+    {
+      "id": "branch-7",
+      "from": "8",
+      "to": "2",
+      "r": 0.0,
+      "x": 0.0625,
+      "b": 0.0,
+      "rate_mva": 250.0,
+      "tap": 1.0,
+      "shift_deg": 0.0,
+      "status": true
+    },
+    {
+      "id": "branch-8",
+      "from": "8",
+      "to": "9",
+      "r": 0.032,
+      "x": 0.161,
+      "b": 0.306,
+      "rate_mva": 250.0,
+      "tap": 1.0,
+      "shift_deg": 0.0,
+      "status": true
+    },
+    {
+      "id": "branch-9",
+      "from": "9",
+      "to": "4",
+      "r": 0.01,
+      "x": 0.085,
+      "b": 0.176,
+      "rate_mva": 250.0,
+      "tap": 1.0,
+      "shift_deg": 0.0,
+      "status": true
+    }
+  ],
+  "schema_version": 1,
+  "name": "MATPOWER nine-bus reference"
+}

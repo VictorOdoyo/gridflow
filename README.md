@@ -61,6 +61,8 @@ The repository contains **56 synthetic reference networks**, each with input dat
 
 See [benchmark methodology](docs/validation.md) and [benchmark cases](benchmarks). Expected values are checked in, so normal tests need only NumPy. The reference generator does not import the production solver.
 
+An additional [upstream MATPOWER nine-bus case](docs/matpower_case9.md) is verified against an independent PYPOWER solution for bus phasors and both-end branch powers. Its upstream license is retained with the data.
+
 ## Model boundaries
 
 The AC model is balanced positive sequence. Voltage and thermal limits are reported, not enforced by optimization. Reactive bounds apply to aggregate PV generation; slack Q/P limits and detailed capability curves are not enforced. FDXB can fail on high R/X or stressed circuits. DC ignores losses and voltage/reactive effects. Continuation holds bus types fixed and disables reactive-limit switching; a sampled fold is not a secure operating margin. Sensitivities hold the solved active set fixed. MATPOWER support is a documented subset, not executable MATLAB or full feature parity.
