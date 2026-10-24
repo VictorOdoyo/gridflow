@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "name": "two_bus / pv_control",
+  "base_mva": 100,
+  "buses": [
+    {
+      "id": "1",
+      "kind": "Slack",
+      "vm": 1.02,
+      "va_deg": 0.0,
+      "base_kv": 110,
+      "gs_mw": 0.0,
+      "bs_mvar": 0.0
+    },
+    {
+      "id": "2",
+      "kind": "PV",
+      "vm": 0.996,
+      "va_deg": 0.0,
+      "base_kv": 110,
+      "gs_mw": 0.0,
+      "bs_mvar": 0.0
+    }
+  ],
+  "branches": [
+    {
+      "id": "line-1",
+      "from": "1",
+      "to": "2",
+      "r": 0.004,
+      "x": 0.12,
+      "b": 0,
+      "tap": 1.0,
+      "shift_deg": 0.0,
+      "rate_mva": 150
+    }
+  ],
+  "loads": [],
+  "generators": [
+    {
+      "id": "gen-1",
+      "bus": "1",
+      "p_mw": 13.366846431740425,
+      "q_mvar": 20.04967916649186,
+      "qmin": -1000,
+      "qmax": 1000
+    },
+    {
+      "id": "gen-2",
+      "bus": "2",
+      "p_mw": -13.34452185587695,
+      "q_mvar": -19.379941890587602,
+      "qmin": -1000,
+      "qmax": 1000
+    }
+  ]
+}
