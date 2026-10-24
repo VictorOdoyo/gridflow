@@ -1,0 +1,3 @@
+# Browser validation checklist
+
+Verify a packaged case loads, the study converges and numerical tables match the API record. Edit a load and confirm the previous solution becomes stale. Apply nested network JSON and check invalid data errors. Drag a node, switch equipment groups, add/delete equipment and undo. Export network and result JSON independently. Check a narrow viewport for accessible controls and use browser print preview for report layout. Browser local drafts are convenience storage only; clearing site data removes them. Network equations and solver tests remain independent of the graphical layout.
