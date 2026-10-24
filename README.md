@@ -8,6 +8,8 @@
 
 GridFlow combines a reusable NumPy engineering library, JSON CLI and local interactive network editor. It records convergence diagnostics and model assumptions. Failed solves stay failed; the application never hides a different algorithm behind the requested method.
 
+![GridFlow workbench with the solved external nine-bus reference](docs/images/workbench.png)
+
 ## Run locally
 
 ```sh
