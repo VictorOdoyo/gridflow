@@ -1,0 +1,184 @@
+{
+  "network": {
+    "schema_version": 1,
+    "name": "star / charging",
+    "base_mva": 100,
+    "buses": [
+      {
+        "id": "1",
+        "kind": "Slack",
+        "vm": 1.02,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      },
+      {
+        "id": "2",
+        "kind": "PQ",
+        "vm": 1.0,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      },
+      {
+        "id": "3",
+        "kind": "PQ",
+        "vm": 1.0,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      },
+      {
+        "id": "4",
+        "kind": "PQ",
+        "vm": 1.0,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      },
+      {
+        "id": "5",
+        "kind": "PQ",
+        "vm": 1.0,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      }
+    ],
+    "branches": [
+      {
+        "id": "line-1",
+        "from": "1",
+        "to": "2",
+        "r": 0.004,
+        "x": 0.12,
+        "b": 0.025,
+        "tap": 1.0,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      },
+      {
+        "id": "line-2",
+        "from": "1",
+        "to": "3",
+        "r": 0.005,
+        "x": 0.13,
+        "b": 0.025,
+        "tap": 1.0,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      },
+      {
+        "id": "line-3",
+        "from": "1",
+        "to": "4",
+        "r": 0.006,
+        "x": 0.13999999999999999,
+        "b": 0.025,
+        "tap": 1.0,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      },
+      {
+        "id": "line-4",
+        "from": "1",
+        "to": "5",
+        "r": 0.004,
+        "x": 0.15,
+        "b": 0.025,
+        "tap": 1.0,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      }
+    ],
+    "loads": [
+      {
+        "id": "load-2",
+        "bus": "2",
+        "p_mw": 13.34452185587695,
+        "q_mvar": 20.619961890587604
+      },
+      {
+        "id": "load-3",
+        "bus": "3",
+        "p_mw": 24.11927699249037,
+        "q_mvar": 21.318343306885414
+      },
+      {
+        "id": "load-4",
+        "bus": "4",
+        "p_mw": 33.25687695194886,
+        "q_mvar": 21.649038968931976
+      },
+      {
+        "id": "load-5",
+        "bus": "5",
+        "p_mw": 40.69183147620361,
+        "q_mvar": 22.53714977541172
+      }
+    ],
+    "generators": [
+      {
+        "id": "gen-1",
+        "bus": "1",
+        "p_mw": 111.66572302551661,
+        "q_mvar": 83.44784155498509,
+        "qmin": -1000,
+        "qmax": 1000
+      }
+    ]
+  },
+  "expected": {
+    "vm_pu": [
+      1.02,
+      0.996,
+      0.992,
+      0.988,
+      0.984
+    ],
+    "va_deg": [
+      0.0,
+      -0.8594366926962348,
+      -1.7188733853924696,
+      -2.5783100780887045,
+      -3.437746770784939
+    ],
+    "branches": [
+      {
+        "id": "line-1",
+        "p_from_mw": 13.366846431740425,
+        "q_from_mvar": 18.749179166491857,
+        "p_to_mw": -13.34452185587695,
+        "q_to_mvar": -20.619961890587604
+      },
+      {
+        "id": "line-2",
+        "p_from_mw": 24.16933866761146,
+        "q_from_mvar": 20.089366860033785,
+        "p_to_mw": -24.11927699249037,
+        "q_to_mvar": -21.318343306885414
+      },
+      {
+        "id": "line-3",
+        "p_from_mw": 33.350512203102554,
+        "q_from_mvar": 21.31318149585158,
+        "p_to_mw": -33.25687695194886,
+        "q_to_mvar": -21.649038968931976
+      },
+      {
+        "id": "line-4",
+        "p_from_mw": 40.779025723062176,
+        "q_from_mvar": 23.29611403260787,
+        "p_to_mw": -40.69183147620361,
+        "q_to_mvar": -22.53714977541172
+      }
+    ],
+    "losses_mw": 0.25321574899682275
+  },
+  "reference_method": "Manufactured solution: prescribe phasors, evaluate independent ideal-transformer series/charging currents, derive nodal injections. No load-flow solver supplies expected values."
+}
