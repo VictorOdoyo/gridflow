@@ -1,0 +1,79 @@
+{
+  "network": {
+    "schema_version": 1,
+    "name": "two_bus / resistive",
+    "base_mva": 100,
+    "buses": [
+      {
+        "id": "1",
+        "kind": "Slack",
+        "vm": 1.02,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      },
+      {
+        "id": "2",
+        "kind": "PQ",
+        "vm": 1.0,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      }
+    ],
+    "branches": [
+      {
+        "id": "line-1",
+        "from": "1",
+        "to": "2",
+        "r": 0.018,
+        "x": 0.12,
+        "b": 0,
+        "tap": 1.0,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      }
+    ],
+    "loads": [
+      {
+        "id": "load-2",
+        "bus": "2",
+        "p_mw": 15.327371819779842,
+        "q_mvar": 17.52565351281653
+      }
+    ],
+    "generators": [
+      {
+        "id": "gen-1",
+        "bus": "1",
+        "p_mw": 15.4257309535353,
+        "q_mvar": 18.181381071186248,
+        "qmin": -1000,
+        "qmax": 1000
+      }
+    ]
+  },
+  "expected": {
+    "vm_pu": [
+      1.02,
+      0.996
+    ],
+    "va_deg": [
+      0.0,
+      -0.8594366926962348
+    ],
+    "branches": [
+      {
+        "id": "line-1",
+        "p_from_mw": 15.4257309535353,
+        "q_from_mvar": 18.181381071186248,
+        "p_to_mw": -15.327371819779842,
+        "q_to_mvar": -17.52565351281653
+      }
+    ],
+    "losses_mw": 0.09835913375545857
+  },
+  "reference_method": "Manufactured solution: prescribe phasors, evaluate independent ideal-transformer series/charging currents, derive nodal injections. No load-flow solver supplies expected values."
+}
