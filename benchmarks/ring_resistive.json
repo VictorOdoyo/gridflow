@@ -1,0 +1,167 @@
+{
+  "network": {
+    "schema_version": 1,
+    "name": "ring / resistive",
+    "base_mva": 100,
+    "buses": [
+      {
+        "id": "1",
+        "kind": "Slack",
+        "vm": 1.02,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      },
+      {
+        "id": "2",
+        "kind": "PQ",
+        "vm": 1.0,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      },
+      {
+        "id": "3",
+        "kind": "PQ",
+        "vm": 1.0,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      },
+      {
+        "id": "4",
+        "kind": "PQ",
+        "vm": 1.0,
+        "va_deg": 0.0,
+        "base_kv": 110,
+        "gs_mw": 0.0,
+        "bs_mvar": 0.0
+      }
+    ],
+    "branches": [
+      {
+        "id": "line-1",
+        "from": "1",
+        "to": "2",
+        "r": 0.018,
+        "x": 0.12,
+        "b": 0,
+        "tap": 1.0,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      },
+      {
+        "id": "line-2",
+        "from": "2",
+        "to": "3",
+        "r": 0.019999999999999997,
+        "x": 0.13,
+        "b": 0,
+        "tap": 1.0,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      },
+      {
+        "id": "line-3",
+        "from": "3",
+        "to": "4",
+        "r": 0.022,
+        "x": 0.13999999999999999,
+        "b": 0,
+        "tap": 1.0,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      },
+      {
+        "id": "line-4",
+        "from": "4",
+        "to": "1",
+        "r": 0.018,
+        "x": 0.15,
+        "b": 0,
+        "tap": 1.0,
+        "shift_deg": 0.0,
+        "rate_mva": 150
+      }
+    ],
+    "loads": [
+      {
+        "id": "load-2",
+        "bus": "2",
+        "p_mw": 3.717584644690138,
+        "q_mvar": 16.16165806599523
+      },
+      {
+        "id": "load-3",
+        "bus": "3",
+        "p_mw": 0.8879232601300142,
+        "q_mvar": -0.047583022472715175
+      },
+      {
+        "id": "load-4",
+        "bus": "4",
+        "p_mw": 42.87489555640069,
+        "q_mvar": 17.60006846219843
+      }
+    ],
+    "generators": [
+      {
+        "id": "gen-1",
+        "bus": "1",
+        "p_mw": 47.87388971652024,
+        "q_mvar": 36.72772523721363,
+        "qmin": -1000,
+        "qmax": 1000
+      }
+    ]
+  },
+  "expected": {
+    "vm_pu": [
+      1.02,
+      0.996,
+      0.992,
+      0.988
+    ],
+    "va_deg": [
+      0.0,
+      -0.8594366926962348,
+      -1.7188733853924696,
+      -2.5783100780887045
+    ],
+    "branches": [
+      {
+        "id": "line-1",
+        "p_from_mw": 15.4257309535353,
+        "q_from_mvar": 18.181381071186248,
+        "p_to_mw": -15.327371819779842,
+        "q_to_mvar": -17.52565351281653
+      },
+      {
+        "id": "line-2",
+        "p_from_mw": 11.609787175089703,
+        "q_from_mvar": 1.363995446821299,
+        "p_to_mw": -11.582237691647938,
+        "q_to_mvar": -1.1849238044498305
+      },
+      {
+        "id": "line-3",
+        "p_from_mw": 10.694314431517924,
+        "q_from_mvar": 1.2325068269225457,
+        "p_to_mw": -10.668406324390249,
+        "q_to_mvar": -1.0676370542918867
+      },
+      {
+        "id": "line-4",
+        "p_from_mw": -32.20648923201044,
+        "q_from_mvar": -16.532431407906543,
+        "p_to_mw": 32.44815876298494,
+        "q_to_mvar": 18.546344166027385
+      }
+    ],
+    "losses_mw": 0.39348625529939696
+  },
+  "reference_method": "Manufactured solution: prescribe phasors, evaluate independent ideal-transformer series/charging currents, derive nodal injections. No load-flow solver supplies expected values."
+}
